@@ -29,6 +29,8 @@ const removeContactById = async (contactId) => {
   }
 
   const [contactToRemove] = contacts.splice(indexToRemove, 1);
+  
+  updateContacts(contacts)
 
   return contactToRemove;
 };
