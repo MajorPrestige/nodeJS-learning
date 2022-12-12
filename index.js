@@ -1,6 +1,8 @@
-const yargs = require("yargs/yargs");
-const { hideBin } = require("yargs/helpers");
+//! const yargs = require("yargs/yargs");
+//! const { hideBin } = require("yargs/helpers");
+
 const contacts = require("./contacts");
+const { program } = require("commander");
 
 const invokeActions = async ({ action, id, name, email, phone }) => {
   switch (action) {
@@ -25,9 +27,24 @@ const invokeActions = async ({ action, id, name, email, phone }) => {
       break;
 
     default:
-      console.warn("\x1B[31m Unknown action type!")
+      console.warn("\x1B[31m Unknown action type!");
   }
 };
+
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
+
+program.parse();
+const options = program.opts();
+invokeActions(options);
+
+//! const arr = hideBin(process.argv);
+//! const { argv } = yargs(arr);
+//! invokeActions(argv);
 
 // invokeActions({ action: "listContacts" });
 // invokeActions({ action: "getContactById", id: "1" });
@@ -38,7 +55,3 @@ const invokeActions = async ({ action, id, name, email, phone }) => {
 //   email: "mail.com",
 //   phone: "777",
 // });
-
-const arr = hideBin(process.argv);
-const { argv } = yargs(arr);
-invokeActions(argv);
