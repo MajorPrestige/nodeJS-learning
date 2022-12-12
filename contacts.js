@@ -13,15 +13,17 @@ const listContacts = async () => {
   return JSON.parse(data);
 };
 
-const getContactById = async (contactId) => {
+const getContactById = async (id) => {
   const contacts = await listContacts();
+  const contactId = String(id)
   const desiredContact = contacts.find((el) => el.id === contactId);
 
   return desiredContact || null;
 };
 
-const removeContactById = async (contactId) => {
+const removeContactById = async (id) => {
   const contacts = await listContacts();
+  const contactId = String(id)
   const indexToRemove = contacts.findIndex((el) => el.id === contactId);
 
   if (indexToRemove === -1) {
