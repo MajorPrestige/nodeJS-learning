@@ -1,21 +1,18 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-/*
- * Раскомментируй и запиши значение
- * const contactsPath = ;
- */
+const contactsPath = path.join(__dirname, "db", "contacts.json");
 
-// TODO: задокументировать каждую функцию
 const listContacts = async () => {
-  // ...твой код
+  const data = await fs.readFile(contactsPath, "utf-8");
+  return JSON.parse(data);
 };
 
 const getContactById = async (contactId) => {
   // ...твой код
 };
 
-const removeContact = async (contactId) => {
+const removeContactById = async (contactId) => {
   // ...твой код
 };
 
@@ -26,6 +23,6 @@ const addContact = async (name, email, phone) => {
 module.exports = {
   listContacts,
   getContactById,
-  removeContact,
+  removeContactById,
   addContact,
 };
