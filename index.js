@@ -1,3 +1,3 @@
 const contacts = require("./contacts");
 
-console.log(contacts);
+const invokeActions = ({ id, name, email, phone }) => {};

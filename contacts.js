@@ -7,21 +7,21 @@ const path = require("path");
  */
 
 // TODO: задокументировать каждую функцию
-function listContacts() {
+const listContacts = async () => {
   // ...твой код
-}
+};
 
-function getContactById(contactId) {
+const getContactById = async (contactId) => {
   // ...твой код
-}
+};
 
-function removeContact(contactId) {
+const removeContact = async (contactId) => {
   // ...твой код
-}
+};
 
-function addContact(name, email, phone) {
+const addContact = async (name, email, phone) => {
   // ...твой код
-}
+};
 
 module.exports = {
   listContacts,
