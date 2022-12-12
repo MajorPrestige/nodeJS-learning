@@ -1,20 +1,24 @@
 {
-  "name": "test",
+  "name": "node-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "learning NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "start:dev": "nodemon index"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MajorPrestige/nodeJS-learning.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "denysdashkevych@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MajorPrestige/nodeJS-learning/issues"
   },
-  "homepage": "https://github.com/MajorPrestige/nodeJS-learning#readme"
+  "homepage": "https://github.com/MajorPrestige/nodeJS-learning#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
